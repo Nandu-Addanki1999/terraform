@@ -11,13 +11,13 @@ variable "instance_type" {
 variable "ec2_tags" {
     type = map(string)
     default = {
-        Name = "HelloWorld"
+        Name = "Roboshop"
         Purpose = "variables-demo"
     }
 }
 
 variable "sg_name" {
-    default = "vars-file-allow-all"
+    default = "allow-all"
 }
 
 variable "sg_description" {
@@ -41,5 +41,28 @@ variable "cidr_blocks" {
 variable "sg_tags" {
     default = {
         Name = "allow-all"
+    }
+}
+
+variable "environment" {
+    default = "prod" 
+}
+
+variable "instance" {
+    default = ["mongodb", "redis", "mysql", "rabbitmq"]
+}
+
+variable "zone_id" {
+    default = "Z09414452UFBO39K2SLBL"
+}
+
+variable "domain_name" {
+    default = "nandu.sbs"
+}
+
+variable "common_tags" {
+    default = {
+        Project = "roboshop"
+        Terraform = "true"
     }
 }
